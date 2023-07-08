@@ -1,0 +1,257 @@
+html {
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+*:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.btn {
+    padding: 14px 21px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    background-color: #116ACC;
+    border-radius: 7px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #5897DB;
+    }
+
+    &:active {
+        background-color: #0C4A8F;
+    }
+
+    &:disabled {
+        background-color: #A1A2AB;
+        cursor: no-drop !important;
+    }
+}
+
+
+.map__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 450px;
+}
+
+#map [class *="searchbox-button"] {
+    color: white;
+}
+
+.map {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100vh;
+}
+
+.map__title {
+    margin-bottom: 50px;
+}
+
+.input-success {
+    border: 1px solid #76CA66 !important;
+}
+
+.input-success+.form__icon {
+    position: absolute;
+    right: -30px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/success.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.input-success+.input-success-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 12px;
+    right: 12px;
+    background-image: url('../assets/galkaÏ.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.input-error {
+    border: 1px solid #FD4E5D !important;
+}
+
+.input-error+.form__icon {
+    position: absolute;
+    right: -30px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/error.svg');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-selected {
+    margin-left: 50px;
+    position: relative;
+    padding: 10px 50px 10px 16px;
+    width: 300px;
+    border: 1px solid #116ACC;
+    border-radius: 7px;
+    color: #374151;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #374151;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: start;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        display: block;
+        border-width: 0 0 1.5px 1.5px;
+        border-color: #116ACC;
+        border-style: solid;
+        width: 7px;
+        height: 7px;
+        pointer-events: none;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+    }
+
+    &.active::after {
+        transform: translateY(-50%) rotate(135deg);
+    }
+}
+
+.dropdown-options {
+    display: none;
+    max-width: 300px;
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    top: 52px;
+    left: 47px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+.dropdown-option {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #E2EDFF;
+    }
+
+    &:active {
+        background-color: #A0C3FF;
+    }
+}
+
+.menu-active {
+    display: block !important;
+}
+
+.form__wrapper {
+    position: relative;
+}
+
+.input-error-text {
+    position: absolute;
+    top: -22px;
+    left: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: #FD4E5D;
+}

@@ -1,0 +1,91 @@
+.accounts {
+    margin-bottom: 70px;
+    margin-top: 50px;
+
+    &__header {
+        display: flex;
+        margin-bottom: 50px;
+        justify-content: space-between;
+
+        &-left {
+            display: flex;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px 70px;
+    }
+
+    &__item {
+        display: flex;
+        max-width: 400px;
+        width: 100%;
+        padding: 22px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 9px;
+
+        &-right {
+            display: flex;
+            align-items: flex-end;
+        }
+
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        color: #182233;
+    }
+
+    &__price {
+        display: inline-block;
+        margin-bottom: 30px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #182233;
+    }
+
+    &__transaction {
+        display: flex;
+        flex-direction: column;
+
+        &-text {
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.02em;
+            color: #000000;
+        }
+
+        &-date {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.02em;
+            color: #000000;
+        }
+
+    }
+
+    &__btn-open {
+        display: block;
+    }
+
+    &__btn-add {
+        padding-left: 50px;
+        background-image: url('../assets/X.svg');
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: 20px;
+    }
+}

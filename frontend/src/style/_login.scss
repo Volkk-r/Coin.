@@ -1,0 +1,53 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__block {
+        background-color: #F3F4F6;
+        border-radius: 50px;
+        padding: 50px 85px 50px 115px;
+    }
+
+    &__title {
+        margin-bottom: 35px;
+    }
+
+    .form {
+        position: relative;
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__label {
+            position: absolute;
+            left: -65px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.01em;
+            color: #182233;
+            padding-top: 11px;
+        }
+
+        &__input {
+            background: #FFFFFF;
+            border: 1px solid #9CA3AF;
+            border-radius: 7px;
+            padding: 13px 10px 13px 16px;
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: 25px;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: -0.01em;
+                color: #6B7280;
+            }
+        }
+    }
+}

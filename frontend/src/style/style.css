@@ -1,0 +1,929 @@
+@charset "UTF-8";
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.btn {
+  padding: 14px 21px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  background-color: #116ACC;
+  border-radius: 7px;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #5897DB;
+}
+.btn:active {
+  background-color: #0C4A8F;
+}
+.btn:disabled {
+  background-color: #A1A2AB;
+  cursor: no-drop !important;
+}
+
+.map__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 80vh;
+}
+
+#map [class*=searchbox-button] {
+  color: white;
+}
+
+.map {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100vh;
+}
+
+.map__title {
+  margin-bottom: 50px;
+}
+
+.input-success {
+  border: 1px solid #76CA66 !important;
+}
+
+.input-success + .form__icon {
+  position: absolute;
+  right: -30px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/success.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-success + .input-success-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 12px;
+  right: 12px;
+  background-image: url("../assets/galkaÏ.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-error {
+  border: 1px solid #FD4E5D !important;
+}
+
+.input-error + .form__icon {
+  position: absolute;
+  right: -30px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/error.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-selected {
+  margin-left: 50px;
+  position: relative;
+  padding: 10px 50px 10px 16px;
+  width: 300px;
+  border: 1px solid #116ACC;
+  border-radius: 7px;
+  color: #374151;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #374151;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-align: start;
+}
+.dropdown-selected::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  display: block;
+  border-width: 0 0 1.5px 1.5px;
+  border-color: #116ACC;
+  border-style: solid;
+  width: 7px;
+  height: 7px;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+}
+.dropdown-selected.active::after {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.dropdown-options {
+  display: none;
+  max-width: 300px;
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  top: 52px;
+  left: 47px;
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.dropdown-option {
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dropdown-option:hover {
+  background-color: #E2EDFF;
+}
+.dropdown-option:active {
+  background-color: #A0C3FF;
+}
+
+.menu-active {
+  display: block !important;
+}
+
+.form__wrapper {
+  position: relative;
+}
+
+.input-error-text {
+  position: absolute;
+  top: -22px;
+  left: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #FD4E5D;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-Thin.woff2") format("woff2"), url("../assets/fonts/WorkSans-Thin.woff") format("woff");
+  font-display: swap;
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-ExtraLight.woff2") format("woff2"), url("../assets/fonts/WorkSans-ExtraLight.woff") format("woff");
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-Light.woff2") format("woff2"), url("../assets/fonts/WorkSans-Light.woff") format("woff");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-Regular.woff2") format("woff2"), url("../assets/fonts/WorkSans-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-Medium.woff2") format("woff2"), url("../assets/fonts/WorkSans-Medium.woff") format("woff");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-SemiBold.woff2") format("woff2"), url("../assets/fonts/WorkSans-SemiBold.woff") format("woff");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-Bold.woff2") format("woff2"), url("../assets/fonts/WorkSans-Bold.woff") format("woff");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-ExtraBold.woff2") format("woff2"), url("../assets/fonts/WorkSans-ExtraBold.woff") format("woff");
+  font-display: swap;
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-Black.woff2") format("woff2"), url("../assets/fonts/WorkSans-Black.woff") format("woff");
+  font-display: swap;
+  font-weight: 900;
+  font-style: normal;
+}
+.header {
+  background-color: #116ACC;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+.header__container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 56px;
+  color: #FFFFFF;
+}
+.header__list {
+  display: flex;
+  align-items: center;
+}
+.header__item:not(:last-child) {
+  margin-right: 25px;
+}
+.header__link {
+  padding: 16px 24px;
+  background-color: #FFFFFF;
+  border: 2px solid #116ACC;
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #116ACC;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+.header__link:hover {
+  background-color: #A0C3EB;
+}
+.header__link:active {
+  background-color: #B3CEE2;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login__block {
+  background-color: #F3F4F6;
+  border-radius: 50px;
+  padding: 50px 85px 50px 115px;
+}
+.login__title {
+  margin-bottom: 35px;
+}
+.login .form {
+  position: relative;
+}
+.login .form__wrap {
+  position: relative;
+}
+.login .form__label {
+  position: absolute;
+  left: -65px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #182233;
+  padding-top: 11px;
+}
+.login .form__input {
+  background: #FFFFFF;
+  border: 1px solid #9CA3AF;
+  border-radius: 7px;
+  padding: 13px 10px 13px 16px;
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.login .form__input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #6B7280;
+}
+.login .form__input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #6B7280;
+}
+
+.accounts {
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+.accounts__header {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+.accounts__header-left {
+  display: flex;
+}
+.accounts__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 70px;
+}
+.accounts__item {
+  display: flex;
+  max-width: 400px;
+  width: 100%;
+  padding: 22px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+.accounts__item-right {
+  display: flex;
+  align-items: flex-end;
+}
+.accounts__subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: #182233;
+}
+.accounts__price {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #182233;
+}
+.accounts__transaction {
+  display: flex;
+  flex-direction: column;
+}
+.accounts__transaction-text {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.accounts__transaction-date {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.accounts__btn-open {
+  display: block;
+}
+.accounts__btn-add {
+  padding-left: 50px;
+  background-image: url("../assets/X.svg");
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: 20px;
+}
+
+.account {
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+.account__header-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.account__header-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.account__back-btn {
+  padding-left: 50px;
+  background-image: url("../assets/coolicon.svg");
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: 20px;
+}
+.account__id {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.account__balance-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.account__balance-number {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.account__transfer {
+  max-width: 606px;
+  width: 100%;
+  background-color: #F3F4F6;
+  border-radius: 50px;
+  padding: 25px 50px;
+}
+.account__transfer-title {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.account__center-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.account .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.account .form__wrapper {
+  position: relative;
+}
+.account .form__label {
+  position: absolute;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #182233;
+  top: 8px;
+}
+.account .form .label-account {
+  left: -207px;
+}
+.account .form .label-amount {
+  left: -145px;
+}
+.account .form__input {
+  background-color: #FFFFFF;
+  border: 1px solid #9CA3AF;
+  border-radius: 7px;
+  width: 300px;
+  padding: 10px 16px;
+  margin-bottom: 25px;
+}
+.account .form__input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #6B7280;
+}
+.account .form__input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #6B7280;
+}
+.account .form__btn {
+  margin-right: 160px;
+  padding-left: 50px;
+  background-image: url("../assets/mail.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 20px;
+}
+.account__dynamic {
+  max-height: 210px;
+}
+.account__charts {
+  max-width: 684px;
+  max-height: 288px;
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 25px 50px;
+}
+.account__history-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1340px;
+  width: 100%;
+}
+.account__chart {
+  max-height: 288px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 25px 50px;
+}
+.account .transactions {
+  background-color: #F3F4F6;
+  border-radius: 56px;
+  padding: 25px 50px;
+}
+.account .transactions table {
+  border-collapse: collapse;
+}
+.account .transactions__title {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.account .transactions__table {
+  width: 100%;
+}
+.account .transactions__table-head {
+  text-align: start;
+  padding: 20px 50px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+.account .transactions__table-head:first-child {
+  display: table-cell;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.account .transactions__table-head:last-child {
+  display: table-cell;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.account .transactions__table-cell {
+  padding: 20px 50px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #374151;
+  border-bottom: 2px solid rgba(0, 82, 255, 0.1019607843);
+}
+.account .transactions__table .--positive {
+  padding: 20px 50px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #76CA66;
+  border-bottom: 2px solid rgba(0, 82, 255, 0.1019607843);
+}
+.account .transactions__table .--negative {
+  padding: 20px 50px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #FD4E5D;
+  border-bottom: 2px solid rgba(0, 82, 255, 0.1019607843);
+}
+.account .transactions__table thead .transactions__table-row {
+  background-color: #116ACC;
+  border-radius: 15px;
+}
+
+.currencies {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.currencies__block {
+  margin-top: 55px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  grid-template-rows: auto;
+}
+.currencies-user {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  max-width: 588px;
+  width: 100%;
+  padding: 50px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+.currencies-user__title {
+  margin-bottom: 25px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.currencies-user__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.currencies-user__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+.currencies-user__item-key {
+  position: relative;
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+.currencies-user__item-key::after {
+  content: "......................................................................................................................";
+  position: absolute;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 5px;
+  line-height: 0px;
+  z-index: 1;
+  color: black;
+  transform: translateY(17px);
+}
+.currencies-user__item-value {
+  display: block;
+  padding-left: 2px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  color: #000000;
+  background-color: #FFFFFF;
+  z-index: 2;
+}
+.currencies-rate {
+  grid-row: 1/3;
+  grid-column: 2/3;
+  background-color: #E5E5E5;
+  border-radius: 50px;
+  padding: 50px;
+  max-width: 703px;
+  width: 100%;
+}
+.currencies-rate__title {
+  margin-bottom: 25px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.currencies-rate__list {
+  height: 62em;
+  overflow: scroll;
+}
+.currencies-rate__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.currencies-rate__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+.currencies-rate__item-key {
+  position: relative;
+  display: block;
+  padding-right: 5px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  background-color: #E5E5E5;
+  color: #000000;
+  z-index: 2;
+}
+.currencies-rate__item-value {
+  position: relative;
+  display: block;
+  padding-left: 2px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  color: #000000;
+  background-color: #E5E5E5;
+  z-index: 2;
+}
+.currencies-rate__item-value::before {
+  content: "..............................................................";
+  position: absolute;
+  left: -300px;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 10px;
+  line-height: 0px;
+  z-index: 1;
+  color: black;
+  transform: translateY(15px);
+}
+.currencies-rate [data-change="1"] {
+  padding-right: 35px;
+  background-image: url("../assets/high.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.currencies-rate [data-change="1"]::before {
+  color: #76CA66;
+}
+.currencies-rate [data-change="-1"] {
+  padding-right: 35px;
+  background-image: url("../assets/low.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.currencies-rate [data-change="-1"]::before {
+  color: #FD4E5D;
+}
+.currencies-exchange {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 50px;
+  max-width: 587px;
+  width: 100%;
+}
+.currencies-exchange__title {
+  margin-bottom: 25px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.currencies-exchange__form-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+.currencies-exchange__form-top {
+  margin-bottom: 25px;
+}
+.currencies-exchange__form-top .currencies-exchange__form-wrap {
+  display: flex;
+  align-items: center;
+}
+.currencies-exchange__form-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.currencies-exchange__form-label {
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+.currencies-exchange__form-input {
+  width: 282px;
+  height: 44px;
+  background-color: #FFFFFF;
+  border: 1px solid #9CA3AF;
+  border-radius: 7px;
+}
+.currencies-exchange__form-select {
+  margin-right: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #9CA3AF;
+  border-radius: 7px;
+  padding: 10px 60px 10px 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+.currencies-exchange__form select[name=to] {
+  margin-right: 0;
+}
+.currencies-exchange__form-submit {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */
